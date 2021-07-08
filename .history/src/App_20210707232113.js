@@ -11,15 +11,18 @@ function App() {
     setCounter(event.target.value)
   }
 
-  
+  const countHandler = (count)=>{
+    setCounter(count)
+  }
+
   return (
     <div>
       <div>
         <Count count={inputHandler}/>
       </div>
       <div>
-        <Increase count={counter} increase={(count)=>setCounter(count)}/>
-        <Decrease count={counter} decrease={(count)=>setCounter(count)}/> 
+        <Increase count={counter} increase={countHandler}/>
+        <Decrease count={counter} decrease={countHandler}/> 
       </div>
       <p>{counter}</p>
     </div>
